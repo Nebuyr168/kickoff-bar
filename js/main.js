@@ -143,7 +143,58 @@
   }
 
   var I = D.infos;
-  remplir("info-adresse", [I.adresse, [I.codePostal, I.ville].filter(Boolean).join(" ")].filter(Boolean).join(", "));
+  var adresse = [I.adresse, I.complement, [I.codePostal, I.ville].filter(Boolean).join(" ")].filter(Boolean).join(", ");
+  remplir("info-adresse", adresse);
+
+  /* ---------- Carte (Leaflet + OpenStreetMap assombri en CSS, sans cookie ni clé) ---------- */
+  if (I.latitude && I.longitude) {
+    var pos = [I.latitude, I.longitude];
+    var carte = document.getElementById("carte");
+    document.getElementById("carte-itineraire").href =
+      "https://www.google.com/maps/dir/?api=1&destination=" + pos.join("%2C");
+    document.getElementById("carte-fond").setAttribute("aria-label", "Carte : KickOff Bar, " + adresse);
+    carte.hidden = false;
+
+    var afficherCarte = function () {
+      var L = window.L;
+      var map = L.map("carte-fond", { scrollWheelZoom: false }).setView(pos, 16);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+      var bulle = el("div");
+      bulle.appendChild(el("strong", null, "KickOff Bar"));
+      bulle.appendChild(el("div", null, adresse));
+      L.marker(pos, {
+        icon: L.divIcon({ className: "repere", iconSize: [30, 30], iconAnchor: [15, 36], popupAnchor: [0, -36] }),
+        title: "KickOff Bar",
+        alt: "KickOff Bar"
+      }).addTo(map).bindPopup(bulle);
+    };
+
+    // La bibliothèque de carte n'est chargée qu'à l'approche de la section
+    var chargerCarte = function () {
+      var css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "vendor/leaflet.css";
+      document.head.appendChild(css);
+      var js = document.createElement("script");
+      js.src = "vendor/leaflet.js";
+      js.onload = afficherCarte;
+      document.head.appendChild(js);
+    };
+    if ("IntersectionObserver" in window) {
+      var veille = new IntersectionObserver(function (entrees) {
+        if (entrees.some(function (e) { return e.isIntersecting; })) {
+          veille.disconnect();
+          chargerCarte();
+        }
+      }, { rootMargin: "600px" });
+      veille.observe(carte);
+    } else {
+      chargerCarte();
+    }
+  }
   remplir("info-horaires", I.horaires);
   remplir("info-telephone", I.telephone, I.telephone && "tel:" + I.telephone.replace(/[^\d+]/g, ""));
   remplir("info-email", I.email, I.email && "mailto:" + I.email);

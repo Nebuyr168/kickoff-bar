@@ -19,7 +19,7 @@ const R = require("../js/render.js");
 
 const URL_SITE = D.site.url.replace(/\/$/, "");
 const I = D.infos;
-const DESCRIPTION = "Bar à soirées à thème du mardi au samedi : karaoké, blind test, soirées musicales, jeudis étudiants, vendredis à dress code et grosses soirées du samedi.";
+const DESCRIPTION = "Bar à soirées à thème" + (I.ville ? " à " + I.ville : "") + ", du mardi au samedi : karaoké, blind test, soirées musicales, jeudis étudiants, vendredis à dress code et grosses soirées du samedi.";
 
 /* ---------- Données structurées (schema.org) ---------- */
 const bar = {
@@ -32,7 +32,11 @@ const bar = {
 };
 const adresseConnue = Boolean(I.adresse && I.ville);
 if (adresseConnue) {
-  bar.address = { "@type": "PostalAddress", streetAddress: I.adresse, postalCode: I.codePostal || undefined, addressLocality: I.ville, addressCountry: "FR" };
+  bar.address = { "@type": "PostalAddress", streetAddress: [I.adresse, I.complement].filter(Boolean).join(", "), postalCode: I.codePostal || undefined, addressLocality: I.ville, addressCountry: "FR" };
+}
+if (I.latitude && I.longitude) {
+  bar.geo = { "@type": "GeoCoordinates", latitude: I.latitude, longitude: I.longitude };
+  bar.hasMap = "https://www.google.com/maps/search/?api=1&query=" + I.latitude + "%2C" + I.longitude;
 }
 if (I.telephone) bar.telephone = I.telephone;
 if (I.email) bar.email = I.email;

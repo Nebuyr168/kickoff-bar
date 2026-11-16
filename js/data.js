@@ -8,9 +8,12 @@ window.KICKOFF = {
   site: { url: "https://nebuyr168.github.io/kickoff-bar" },
 
   infos: {
-    adresse: "",        // ex. "12 rue de la Soif"
-    codePostal: "",     // ex. "35000"
-    ville: "",          // ex. "Rennes"
+    adresse: "48 rue Georges Clemenceau",
+    complement: "Passage du Cadran",
+    codePostal: "49300",
+    ville: "Cholet",
+    latitude: 47.06186,   // position du repère sur la carte
+    longitude: -0.87894,
     horaires: "",       // texte affiché, ex. "18 h – 1 h"
     heureOuverture: "", // pour Google, format 24 h, ex. "18:00"
     heureFermeture: "", // pour Google, format 24 h, ex. "01:00"
@@ -31,6 +34,8 @@ window.KICKOFF = {
 
   // Questions fréquentes (à mettre à jour avec le planning)
   faq: [
+    { q: "Où se trouve le KickOff Bar ?",
+      r: "Le KickOff Bar se trouve au 48 rue Georges Clemenceau, passage du Cadran, à Cholet (49300)." },
     { q: "Quels soirs le KickOff Bar propose-t-il des soirées ?",
       r: "Le KickOff Bar propose des soirées à thème du mardi au samedi : Social & Fun le mardi, Music Club le mercredi, Student Night le jeudi, Dress Code Party le vendredi et Big Party le samedi." },
     { q: "Combien coûte le cocktail de la semaine ?",
