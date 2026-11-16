@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KickOff Bar — Soirées à thème, planning et infos pratiques</title>
+  <meta name="description" content="KickOff Bar : des soirées à thème du mardi au samedi. Découvrez la programmation de décembre et janvier, le cocktail de la semaine à 6 € et les infos pratiques.">
+  <meta name="theme-color" content="#0b0b0d">
+  <meta property="og:title" content="KickOff Bar — Soirées à thème du mardi au samedi">
+  <meta property="og:description" content="Programmation de décembre et janvier, cocktail de la semaine à 6 € et infos pratiques.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/rubik.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header-in">
+      <a class="logo" href="#accueil" aria-label="KickOff Bar — accueil">Kick<span>Off</span> Bar</a>
+      <button class="burger" type="button" aria-controls="nav" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav" class="nav" aria-label="Navigation principale">
+        <a href="#concept">Le concept</a>
+        <a href="#planning">Planning</a>
+        <a href="#cocktail">Cocktail</a>
+        <a href="#infos" class="nav-cta">Infos pratiques</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- Diaporama -->
+    <section id="accueil" class="hero" aria-roledescription="carrousel" aria-label="À la une">
+      <div class="slides">
+        <article class="slide active">
+          <img src="images/slide-1.svg" alt="" width="1600" height="900" fetchpriority="high">
+          <div class="container slide-txt">
+            <p class="kicker">Bar à soirées · du mardi au samedi</p>
+            <h1>Kick<span>Off</span> Bar</h1>
+            <p class="lead">Des soirées pour se rencontrer, s'amuser et danser&nbsp;!</p>
+            <a class="btn" href="#planning">Voir le planning</a>
+          </div>
+        </article>
+        <article class="slide" aria-hidden="true">
+          <img src="images/slide-2.svg" alt="" width="1600" height="900" loading="lazy">
+          <div class="container slide-txt">
+            <p class="kicker">Cinq soirs, cinq ambiances</p>
+            <p class="slide-titre">Chaque soir a <span>son thème</span></p>
+            <p class="lead">Karaoké, soirées musicales, jeudis étudiants, vendredis à dress code et grosses soirées du samedi.</p>
+            <a class="btn" href="#concept">Découvrir le concept</a>
+          </div>
+        </article>
+        <article class="slide" aria-hidden="true">
+          <img src="images/slide-3.svg" alt="" width="1600" height="900" loading="lazy">
+          <div class="container slide-txt">
+            <p class="kicker">Chaque semaine</p>
+            <p class="slide-titre">Le cocktail de la semaine à <span>6&nbsp;€</span></p>
+            <p class="lead">Un cocktail différent à l'honneur chaque semaine, à petit prix.</p>
+            <a class="btn" href="#cocktail">En savoir plus</a>
+          </div>
+        </article>
+      </div>
+
+      <button class="hero-arrow prev" type="button" aria-label="Image précédente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <button class="hero-arrow next" type="button" aria-label="Image suivante">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+
+      <div class="hero-controls">
+        <button class="dot" type="button" aria-label="Afficher l'image 1" aria-current="true"></button>
+        <button class="dot" type="button" aria-label="Afficher l'image 2"></button>
+        <button class="dot" type="button" aria-label="Afficher l'image 3"></button>
+        <button class="hero-toggle" type="button" aria-label="Mettre le diaporama en pause"></button>
+      </div>
+    </section>
+
+    <!-- Prochaine soirée -->
+    <section class="bandeau" aria-label="Prochaine soirée">
+      <div class="container bandeau-in">
+        <div id="prochaine" class="prochaine"></div>
+        <a class="btn btn-ghost" href="#planning">Tout le planning</a>
+      </div>
+    </section>
+
+    <!-- Concept -->
+    <section id="concept" class="section">
+      <div class="container">
+        <h2 class="titre">Cinq soirs, <span>cinq ambiances</span></h2>
+        <p class="intro">Du mardi au samedi, le KickOff Bar change de décor et de musique. À chaque soir son rendez-vous.</p>
+        <ul id="soirs-liste" class="soirs"></ul>
+      </div>
+    </section>
+
+    <!-- Planning -->
+    <section id="planning" class="section section-alt">
+      <div class="container">
+        <h2 class="titre">Programmation <span>décembre &amp; janvier</span></h2>
+        <p class="intro">Neuf semaines de soirées à thème, du 1<sup>er</sup>&nbsp;décembre 2026 à la fin janvier 2027.</p>
+
+        <div class="planning-cadre">
+          <table class="planning">
+            <caption class="sr-only">Programmation des soirées du KickOff Bar, semaine par semaine</caption>
+            <thead>
+              <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Semaine</th>
+                <th scope="col">Mardi <small>Social &amp; Fun</small></th>
+                <th scope="col">Mercredi <small>Music Club</small></th>
+                <th scope="col">Jeudi <small>Student Night</small></th>
+                <th scope="col">Vendredi <small>Dress Code Party</small></th>
+                <th scope="col">Samedi <small>Big Party</small></th>
+              </tr>
+            </thead>
+            <tbody id="planning-corps"></tbody>
+          </table>
+        </div>
+        <noscript><p class="intro">Activez JavaScript pour afficher la programmation.</p></noscript>
+      </div>
+    </section>
+
+    <!-- Cocktail -->
+    <section id="cocktail" class="section">
+      <div class="container cocktail">
+        <div class="cocktail-prix" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M10 12h44L32 36zM32 36v18M22 54h20M40 6l-9 20"/></svg>
+          <span>6&nbsp;€</span>
+        </div>
+        <div>
+          <h2 class="titre">Le cocktail <span>de la semaine</span></h2>
+          <p class="intro">Chaque semaine, un cocktail différent est mis à l'honneur au prix de 6&nbsp;€. Demandez-le au comptoir&nbsp;!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infos pratiques -->
+    <section id="infos" class="section section-alt">
+      <div class="container">
+        <h2 class="titre">Infos <span>pratiques</span></h2>
+        <div class="infos">
+          <div class="info">
+            <h3>Ouverture</h3>
+            <p>Soirées du mardi au samedi.</p>
+            <dl>
+              <dt>Horaires</dt><dd id="info-horaires"></dd>
+            </dl>
+            <p class="note">Fermeture exceptionnelle pour Noël les jeudi 24 et vendredi 25&nbsp;décembre.</p>
+          </div>
+          <div class="info">
+            <h3>Nous trouver</h3>
+            <dl>
+              <dt>Adresse</dt><dd id="info-adresse"></dd>
+            </dl>
+          </div>
+          <div class="info">
+            <h3>Nous contacter</h3>
+            <dl>
+              <dt>Téléphone</dt><dd id="info-telephone"></dd>
+              <dt>E-mail</dt><dd id="info-email"></dd>
+              <dt>Instagram</dt><dd id="info-instagram"></dd>
+              <dt>Facebook</dt><dd id="info-facebook"></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-in">
+      <p class="logo">Kick<span>Off</span> Bar</p>
+      <p class="sante">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+      <p class="copy">© <span id="annee">2026</span> KickOff Bar. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
