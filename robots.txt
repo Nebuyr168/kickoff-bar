@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nebuyr168.github.io/kickoff-bar/sitemap.xml

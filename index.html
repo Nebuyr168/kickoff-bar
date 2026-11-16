@@ -3,13 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KickOff Bar — Soirées à thème, planning et infos pratiques</title>
-  <meta name="description" content="KickOff Bar : des soirées à thème du mardi au samedi. Découvrez la programmation de décembre et janvier, le cocktail de la semaine à 6 € et les infos pratiques.">
+  <title>KickOff Bar — Bar à soirées : karaoké, blind test, soirées étudiantes</title>
+  <meta name="description" content="KickOff Bar, bar à soirées à thème du mardi au samedi : karaoké, blind test, soirées étudiantes, dress code. Planning complet et cocktail de la semaine à 6 €.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0b0b0d">
-  <meta property="og:title" content="KickOff Bar — Soirées à thème du mardi au samedi">
-  <meta property="og:description" content="Programmation de décembre et janvier, cocktail de la semaine à 6 € et infos pratiques.">
+  <meta property="og:site_name" content="KickOff Bar">
+  <meta property="og:title" content="KickOff Bar — Bar à soirées à thème du mardi au samedi">
+  <meta property="og:description" content="Karaoké, blind test, soirées étudiantes, vendredis à dress code et grosses soirées du samedi. Planning complet et cocktail de la semaine à 6 €.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
+  <!-- build:head -->
+  <link rel="canonical" href="https://nebuyr168.github.io/kickoff-bar/">
+  <meta property="og:url" content="https://nebuyr168.github.io/kickoff-bar/">
+  <meta property="og:image" content="https://nebuyr168.github.io/kickoff-bar/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nebuyr168.github.io/kickoff-bar/images/og.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nebuyr168.github.io/kickoff-bar/#site","name":"KickOff Bar","url":"https://nebuyr168.github.io/kickoff-bar/","inLanguage":"fr-FR"},{"@type":"BarOrPub","@id":"https://nebuyr168.github.io/kickoff-bar/#bar","name":"KickOff Bar","url":"https://nebuyr168.github.io/kickoff-bar/","image":"https://nebuyr168.github.io/kickoff-bar/images/og.jpg","description":"Bar à soirées à thème du mardi au samedi : karaoké, blind test, soirées musicales, jeudis étudiants, vendredis à dress code et grosses soirées du samedi."},{"@type":"FAQPage","@id":"https://nebuyr168.github.io/kickoff-bar/#faq","mainEntity":[{"@type":"Question","name":"Quels soirs le KickOff Bar propose-t-il des soirées ?","acceptedAnswer":{"@type":"Answer","text":"Le KickOff Bar propose des soirées à thème du mardi au samedi : Social & Fun le mardi, Music Club le mercredi, Student Night le jeudi, Dress Code Party le vendredi et Big Party le samedi."}},{"@type":"Question","name":"Combien coûte le cocktail de la semaine ?","acceptedAnswer":{"@type":"Answer","text":"Le cocktail de la semaine est à 6 €. Il change chaque semaine."}},{"@type":"Question","name":"Y a-t-il des soirées étudiantes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, chaque jeudi : c'est la Student Night, avec des animations et des défis entre campus."}},{"@type":"Question","name":"Quand ont lieu les soirées karaoké et blind test ?","acceptedAnswer":{"@type":"Answer","text":"Le mardi, pendant les soirées Social & Fun : Karaoké Battle les 1er décembre et 5 janvier, Blind Test Battle le 8 décembre, Christmas Karaoké le 22 décembre, Music Bingo & Blind Test le 12 janvier."}},{"@type":"Question","name":"Le bar est-il ouvert pendant les fêtes ?","acceptedAnswer":{"@type":"Answer","text":"Le KickOff Bar est fermé pour Noël les jeudi 24 et vendredi 25 décembre 2026. Il fête le Nouvel An le jeudi 31 décembre avec la New Year Mega Party."}}]}]}</script>
+<!-- /build:head -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/rubik.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
@@ -27,6 +39,7 @@
         <a href="#concept">Le concept</a>
         <a href="#planning">Planning</a>
         <a href="#cocktail">Cocktail</a>
+        <a href="#faq">FAQ</a>
         <a href="#infos" class="nav-cta">Infos pratiques</a>
       </nav>
     </div>
@@ -94,7 +107,15 @@
       <div class="container">
         <h2 class="titre">Cinq soirs, <span>cinq ambiances</span></h2>
         <p class="intro">Du mardi au samedi, le KickOff Bar change de décor et de musique. À chaque soir son rendez-vous.</p>
-        <ul id="soirs-liste" class="soirs"></ul>
+        <ul id="soirs-liste" class="soirs">
+<!-- build:soirs -->
+<li class="soir"><span class="soir-jour">Mardi</span><h3>Social &amp; Fun</h3><p>Karaoké, blind tests, jeux et rencontres : la soirée idéale pour faire connaissance.</p></li>
+<li class="soir"><span class="soir-jour">Mercredi</span><h3>Music Club</h3><p>Un style musical à l'honneur chaque semaine, du disco au rock en passant par le rap.</p></li>
+<li class="soir"><span class="soir-jour">Jeudi</span><h3>Student Night</h3><p>Les jeudis étudiants : animations et défis entre campus.</p></li>
+<li class="soir"><span class="soir-jour">Vendredi</span><h3>Dress Code Party</h3><p>Les vendredis à thème : dress code et concours.</p></li>
+<li class="soir"><span class="soir-jour">Samedi</span><h3>Big Party</h3><p>Les samedis événements : nos plus grosses soirées !</p></li>
+<!-- /build:soirs -->
+        </ul>
       </div>
     </section>
 
@@ -118,10 +139,21 @@
                 <th scope="col">Samedi <small>Big Party</small></th>
               </tr>
             </thead>
-            <tbody id="planning-corps"></tbody>
+            <tbody id="planning-corps">
+<!-- build:planning -->
+<tr data-mardi="2026-12-01"><th class="num" scope="row" aria-label="Semaine 1">1</th><td class="periode">Du 01/12 au 05/12</td><td class="soiree" data-date="2026-12-01" data-label="Mardi 1er déc."><div class="soiree-txt"><strong>Karaoké Battle</strong><span>Équipes vs équipes</span></div></td><td class="soiree" data-date="2026-12-02" data-label="Mercredi 2 déc."><div class="soiree-txt"><strong>Disco Fever</strong><span>Années 80</span></div></td><td class="soiree" data-date="2026-12-03" data-label="Jeudi 3 déc."><div class="soiree-txt"><strong>Student Welcome Party</strong></div></td><td class="soiree" data-date="2026-12-04" data-label="Vendredi 4 déc."><div class="soiree-txt"><strong>Back to the 2000's</strong><span>Hits &amp; nostalgie</span></div></td><td class="soiree s-uv" data-date="2026-12-05" data-label="Samedi 5 déc."><div class="soiree-txt"><strong>UV Neon Party</strong><span>Fluo &amp; blacklight</span></div></td></tr>
+<tr data-mardi="2026-12-08"><th class="num" scope="row" aria-label="Semaine 2">2</th><td class="periode">Du 07/12 au 12/12</td><td class="soiree" data-date="2026-12-08" data-label="Mardi 8 déc."><div class="soiree-txt"><strong>Blind Test Battle</strong><span>Par équipes</span></div></td><td class="soiree" data-date="2026-12-09" data-label="Mercredi 9 déc."><div class="soiree-txt"><strong>Reggae &amp; Dancehall Night</strong></div></td><td class="soiree" data-date="2026-12-10" data-label="Jeudi 10 déc."><div class="soiree-txt"><strong>Campus Challenge</strong><span>Défis entre écoles</span></div></td><td class="soiree" data-date="2026-12-11" data-label="Vendredi 11 déc."><div class="soiree-txt"><strong>Winter Beach Party</strong><span>Ambiance tropicale</span></div></td><td class="soiree s-jungle" data-date="2026-12-12" data-label="Samedi 12 déc."><div class="soiree-txt"><strong>Jungle Party</strong><span>Déco &amp; ambiance sauvage</span></div></td></tr>
+<tr data-mardi="2026-12-15"><th class="num" scope="row" aria-label="Semaine 3">3</th><td class="periode">Du 15/12 au 19/12</td><td class="soiree" data-date="2026-12-15" data-label="Mardi 15 déc."><div class="soiree-txt"><strong>Speed Meeting &amp; Icebreakers</strong></div></td><td class="soiree" data-date="2026-12-16" data-label="Mercredi 16 déc."><div class="soiree-txt"><strong>Pop Culture Hits</strong><span>De 2010 à aujourd'hui</span></div></td><td class="soiree" data-date="2026-12-17" data-label="Jeudi 17 déc."><div class="soiree-txt"><strong>Student Secret Santa</strong></div></td><td class="soiree" data-date="2026-12-18" data-label="Vendredi 18 déc."><div class="soiree-txt"><strong>Chic &amp; Choc Challenge</strong><span>Concours du meilleur duo</span></div></td><td class="soiree" data-date="2026-12-19" data-label="Samedi 19 déc."><div class="soiree-txt"><strong>Black &amp; White Party</strong></div></td></tr>
+<tr data-mardi="2026-12-22"><th class="num" scope="row" aria-label="Semaine 4">4</th><td class="periode">Du 22/12 au 26/12</td><td class="soiree" data-date="2026-12-22" data-label="Mardi 22 déc."><div class="soiree-txt"><strong>Christmas Karaoké</strong></div></td><td class="soiree" data-date="2026-12-23" data-label="Mercredi 23 déc."><div class="soiree-txt"><strong>Bass Night</strong><span>Trance &amp; DNB</span></div></td><td class="soiree s-ferme" data-date="2026-12-24" data-label="Jeudi 24 déc."><div class="soiree-txt"><strong>Fermé pour Noël</strong></div></td><td class="soiree s-ferme" data-date="2026-12-25" data-label="Vendredi 25 déc."><div class="soiree-txt"><strong>Fermé pour Noël</strong></div></td><td class="soiree s-chaude" data-date="2026-12-26" data-label="Samedi 26 déc."><div class="soiree-txt"><strong>Chaude</strong><span>Christmas Afterparty</span></div></td></tr>
+<tr data-mardi="2026-12-29"><th class="num" scope="row" aria-label="Semaine 5">5</th><td class="periode">Du 29/12 au 02/01</td><td class="soiree" data-date="2026-12-29" data-label="Mardi 29 déc."><div class="soiree-txt"><strong>Afterwork &amp; Friends</strong></div></td><td class="soiree" data-date="2026-12-30" data-label="Mercredi 30 déc."><div class="soiree-txt"><strong>Latino &amp; Shatta Party</strong></div></td><td class="soiree s-nouvel-an" data-date="2026-12-31" data-label="Jeudi 31 déc."><div class="soiree-txt"><strong>New Year Mega Party</strong></div></td><td class="soiree" data-date="2027-01-01" data-label="Vendredi 1er janv."><div class="soiree-txt"><strong>Retour dans les 2000's</strong></div></td><td class="soiree s-psy" data-date="2027-01-02" data-label="Samedi 2 janv."><div class="soiree-txt"><strong>Psy Trance Experience</strong></div></td></tr>
+<tr data-mardi="2027-01-05"><th class="num" scope="row" aria-label="Semaine 6">6</th><td class="periode">Du 04/01 au 09/01</td><td class="soiree" data-date="2027-01-05" data-label="Mardi 5 janv."><div class="soiree-txt"><strong>Karaoké Battle</strong><span>Édition 2027</span></div></td><td class="soiree" data-date="2027-01-06" data-label="Mercredi 6 janv."><div class="soiree-txt"><strong>Rap FR vs US</strong><span>Battle Hits</span></div></td><td class="soiree" data-date="2027-01-07" data-label="Jeudi 7 janv."><div class="soiree-txt"><strong>Back to Campus</strong></div></td><td class="soiree" data-date="2027-01-08" data-label="Vendredi 8 janv."><div class="soiree-txt"><strong>Summer in January</strong><span>Ambiance estivale</span></div></td><td class="soiree s-eau" data-date="2027-01-09" data-label="Samedi 9 janv."><div class="soiree-txt"><strong>Underwater Neon Party</strong></div></td></tr>
+<tr data-mardi="2027-01-12"><th class="num" scope="row" aria-label="Semaine 7">7</th><td class="periode">Du 12/01 au 16/01</td><td class="soiree" data-date="2027-01-12" data-label="Mardi 12 janv."><div class="soiree-txt"><strong>Music Bingo &amp; Blind Test</strong></div></td><td class="soiree" data-date="2027-01-13" data-label="Mercredi 13 janv."><div class="soiree-txt"><strong>Rock &amp; Metal Night</strong></div></td><td class="soiree" data-date="2027-01-14" data-label="Jeudi 14 janv."><div class="soiree-txt"><strong>Inter-Campus Battle</strong></div></td><td class="soiree" data-date="2027-01-15" data-label="Vendredi 15 janv."><div class="soiree-txt"><strong>Chic &amp; Choc</strong><span>Édition duo</span></div></td><td class="soiree" data-date="2027-01-16" data-label="Samedi 16 janv."><div class="soiree-txt"><strong>Black &amp; White Experience</strong></div></td></tr>
+<tr data-mardi="2027-01-19"><th class="num" scope="row" aria-label="Semaine 8">8</th><td class="periode">Du 19/01 au 23/01</td><td class="soiree" data-date="2027-01-19" data-label="Mardi 19 janv."><div class="soiree-txt"><strong>Speed Friending</strong><span>Rencontres amicales</span></div></td><td class="soiree" data-date="2027-01-20" data-label="Mercredi 20 janv."><div class="soiree-txt"><strong>Hard Music Night</strong></div></td><td class="soiree" data-date="2027-01-21" data-label="Jeudi 21 janv."><div class="soiree-txt"><strong>Student DJ Takeover</strong></div></td><td class="soiree" data-date="2027-01-22" data-label="Vendredi 22 janv."><div class="soiree-txt"><strong>Movie &amp; Series Characters</strong><span>Viens déguisé !</span></div></td><td class="soiree s-chaude" data-date="2027-01-23" data-label="Samedi 23 janv."><div class="soiree-txt"><strong>Chaude</strong><span>Winter Edition</span></div></td></tr>
+<tr data-mardi="2027-01-26"><th class="num" scope="row" aria-label="Semaine 9">9</th><td class="periode">Du 26/01 au 31/01</td><td class="soiree" data-date="2027-01-26" data-label="Mardi 26 janv."><div class="soiree-txt"><strong>Afterwork &amp; Friends</strong></div></td><td class="soiree" data-date="2027-01-27" data-label="Mercredi 27 janv."><div class="soiree-txt"><strong>80's Disco Classics</strong></div></td><td class="soiree" data-date="2027-01-28" data-label="Jeudi 28 janv."><div class="soiree-txt"><strong>Campus All Stars</strong></div></td><td class="soiree" data-date="2027-01-29" data-label="Vendredi 29 janv."><div class="soiree-txt"><strong>Y2K Retro Party</strong><span>Années 2000</span></div></td><td class="soiree s-uv" data-date="2027-01-30" data-label="Samedi 30 janv."><div class="soiree-txt"><strong>UV Mega Party</strong><span>Final Edition</span></div></td></tr>
+<!-- /build:planning -->
+            </tbody>
           </table>
         </div>
-        <noscript><p class="intro">Activez JavaScript pour afficher la programmation.</p></noscript>
       </div>
     </section>
 
@@ -139,8 +171,24 @@
       </div>
     </section>
 
+    <!-- Questions fréquentes -->
+    <section id="faq" class="section section-alt">
+      <div class="container">
+        <h2 class="titre">Questions <span>fréquentes</span></h2>
+        <div id="faq-liste" class="faq">
+<!-- build:faq -->
+<details><summary>Quels soirs le KickOff Bar propose-t-il des soirées ?</summary><p>Le KickOff Bar propose des soirées à thème du mardi au samedi : Social &amp; Fun le mardi, Music Club le mercredi, Student Night le jeudi, Dress Code Party le vendredi et Big Party le samedi.</p></details>
+<details><summary>Combien coûte le cocktail de la semaine ?</summary><p>Le cocktail de la semaine est à 6 €. Il change chaque semaine.</p></details>
+<details><summary>Y a-t-il des soirées étudiantes ?</summary><p>Oui, chaque jeudi : c'est la Student Night, avec des animations et des défis entre campus.</p></details>
+<details><summary>Quand ont lieu les soirées karaoké et blind test ?</summary><p>Le mardi, pendant les soirées Social &amp; Fun : Karaoké Battle les 1er décembre et 5 janvier, Blind Test Battle le 8 décembre, Christmas Karaoké le 22 décembre, Music Bingo &amp; Blind Test le 12 janvier.</p></details>
+<details><summary>Le bar est-il ouvert pendant les fêtes ?</summary><p>Le KickOff Bar est fermé pour Noël les jeudi 24 et vendredi 25 décembre 2026. Il fête le Nouvel An le jeudi 31 décembre avec la New Year Mega Party.</p></details>
+<!-- /build:faq -->
+        </div>
+      </div>
+    </section>
+
     <!-- Infos pratiques -->
-    <section id="infos" class="section section-alt">
+    <section id="infos" class="section">
       <div class="container">
         <h2 class="titre">Infos <span>pratiques</span></h2>
         <div class="infos">
@@ -180,7 +228,8 @@
     </div>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/render.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

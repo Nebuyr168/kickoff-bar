@@ -2,33 +2,13 @@
   "use strict";
 
   var D = window.KICKOFF;
-  var JOURS = ["mardi", "mercredi", "jeudi", "vendredi", "samedi"];
-  var MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
-  var MOIS_COURTS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
-
-  // Typographie française : espace insécable avant ! ? : ; €
-  function typo(s) {
-    return String(s).replace(/ ([!?:;€])/g, " $1");
-  }
+  var R = window.KICKOFF_RENDER;
 
   function el(tag, cls, txt) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
-    if (txt != null) e.textContent = typo(txt);
+    if (txt != null) e.textContent = R.typo(txt);
     return e;
-  }
-
-  function dateOf(iso, plus) {
-    var p = iso.split("-").map(Number);
-    return new Date(p[0], p[1] - 1, p[2] + (plus || 0));
-  }
-
-  function numJour(d) {
-    return d.getDate() === 1 ? "1er" : String(d.getDate());
-  }
-
-  function cap(s) {
-    return s.charAt(0).toUpperCase() + s.slice(1);
   }
 
   var today = new Date();
@@ -103,62 +83,39 @@
     start();
   })();
 
-  /* ---------- Les cinq soirs ---------- */
-  var soirsBox = document.getElementById("soirs-liste");
-  D.soirs.forEach(function (s) {
-    var li = el("li", "soir");
-    li.appendChild(el("span", "soir-jour", s.jour));
-    li.appendChild(el("h3", null, s.nom));
-    li.appendChild(el("p", null, s.texte));
-    soirsBox.appendChild(li);
-  });
-
-  /* ---------- Planning ---------- */
+  /* ---------- Contenu issu de data.js (toujours à jour, même sans build) ---------- */
+  document.getElementById("soirs-liste").innerHTML = R.soirs(D);
+  document.getElementById("faq-liste").innerHTML = R.faq(D);
   var tbody = document.getElementById("planning-corps");
-  var prochaine = null; // première soirée à venir (hors fermetures)
+  tbody.innerHTML = R.planning(D);
 
-  D.semaines.forEach(function (sem) {
-    var tr = el("tr");
-    var debut = dateOf(sem.mardi, -1); // lundi
-    var fin = dateOf(sem.mardi, 5);    // dimanche
-    var enCours = today >= debut && today <= fin;
-    if (enCours) tr.className = "en-cours";
-
-    var th = el("th", "num", String(sem.n));
-    th.scope = "row";
-    th.setAttribute("aria-label", "Semaine " + sem.n);
-    tr.appendChild(th);
-
-    var per = el("td", "periode", sem.periode);
-    if (enCours) per.appendChild(el("span", "badge", "Cette semaine"));
-    tr.appendChild(per);
-
-    sem.soirees.forEach(function (s, i) {
-      var d = dateOf(sem.mardi, i);
-      var td = el("td", "soiree" + (s.style ? " s-" + s.style : ""));
-      td.setAttribute("data-label", cap(JOURS[i]) + " " + numJour(d) + " " + MOIS_COURTS[d.getMonth()]);
-      var wrap = el("div", "soiree-txt");
-      wrap.appendChild(el("strong", null, s.titre));
-      if (s.detail) wrap.appendChild(el("span", null, s.detail));
-      td.appendChild(wrap);
-      if (d < today) td.classList.add("passee");
-      if (!prochaine && d >= today && s.style !== "ferme") {
-        prochaine = { date: d, jour: i, soiree: s };
-      }
-      tr.appendChild(td);
+  /* ---------- Planning : semaine en cours et soirées passées ---------- */
+  tbody.querySelectorAll("tr").forEach(function (tr) {
+    var mardi = tr.getAttribute("data-mardi");
+    if (today >= R.dateOf(mardi, -1) && today <= R.dateOf(mardi, 5)) { // du lundi au dimanche
+      tr.classList.add("en-cours");
+      tr.querySelector(".periode").appendChild(el("span", "badge", "Cette semaine"));
+    }
+    tr.querySelectorAll(".soiree").forEach(function (td) {
+      if (R.dateOf(td.getAttribute("data-date")) < today) td.classList.add("passee");
     });
-
-    tbody.appendChild(tr);
   });
 
-  /* ---------- Prochaine soirée ---------- */
+  /* ---------- Prochaine soirée (hors fermetures) ---------- */
+  var prochaine = null;
+  D.semaines.forEach(function (sem) {
+    sem.soirees.forEach(function (s, i) {
+      var d = R.dateOf(sem.mardi, i);
+      if (!prochaine && d >= today && s.style !== "ferme") prochaine = { date: d, jour: i, soiree: s };
+    });
+  });
+
   var box = document.getElementById("prochaine");
   if (prochaine) {
     var d = prochaine.date;
-    var quand = d.getTime() === today.getTime()
-      ? "Ce soir"
-      : cap(JOURS[prochaine.jour]) + " " + numJour(d) + " " + MOIS[d.getMonth()];
-    box.appendChild(el("p", "prochaine-sur", d.getTime() === today.getTime() ? "À ne pas manquer" : "Prochaine soirée"));
+    var ceSoir = d.getTime() === today.getTime();
+    var quand = ceSoir ? "Ce soir" : R.cap(R.JOURS[prochaine.jour]) + " " + R.numJour(d) + " " + R.MOIS[d.getMonth()];
+    box.appendChild(el("p", "prochaine-sur", ceSoir ? "À ne pas manquer" : "Prochaine soirée"));
     box.appendChild(el("p", "prochaine-date", quand));
     box.appendChild(el("p", "prochaine-titre", prochaine.soiree.titre));
     var sous = D.soirs[prochaine.jour].nom + (prochaine.soiree.detail ? " · " + prochaine.soiree.detail : "");
@@ -181,12 +138,12 @@
       if (/^https?:/.test(lien)) { a.target = "_blank"; a.rel = "noopener"; }
       cible.appendChild(a);
     } else {
-      cible.textContent = typo(valeur);
+      cible.textContent = R.typo(valeur);
     }
   }
 
   var I = D.infos;
-  remplir("info-adresse", [I.adresse, I.ville].filter(Boolean).join(", "));
+  remplir("info-adresse", [I.adresse, [I.codePostal, I.ville].filter(Boolean).join(" ")].filter(Boolean).join(", "));
   remplir("info-horaires", I.horaires);
   remplir("info-telephone", I.telephone, I.telephone && "tel:" + I.telephone.replace(/[^\d+]/g, ""));
   remplir("info-email", I.email, I.email && "mailto:" + I.email);

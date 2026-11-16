@@ -4,10 +4,16 @@
  * Une valeur laissée vide ("") s'affiche « À compléter » sur le site.
  */
 window.KICKOFF = {
+  // Adresse publique du site (sans « / » final). À changer si un nom de domaine est ajouté.
+  site: { url: "https://nebuyr168.github.io/kickoff-bar" },
+
   infos: {
     adresse: "",        // ex. "12 rue de la Soif"
-    ville: "",          // ex. "35000 Rennes"
-    horaires: "",       // ex. "18 h – 1 h"
+    codePostal: "",     // ex. "35000"
+    ville: "",          // ex. "Rennes"
+    horaires: "",       // texte affiché, ex. "18 h – 1 h"
+    heureOuverture: "", // pour Google, format 24 h, ex. "18:00"
+    heureFermeture: "", // pour Google, format 24 h, ex. "01:00"
     telephone: "",      // ex. "02 00 00 00 00"
     email: "",          // ex. "contact@kickoffbar.fr"
     instagram: "",      // adresse complète du profil, ex. "https://www.instagram.com/…"
@@ -21,6 +27,20 @@ window.KICKOFF = {
     { jour: "Jeudi",    nom: "Student Night",    texte: "Les jeudis étudiants : animations et défis entre campus." },
     { jour: "Vendredi", nom: "Dress Code Party", texte: "Les vendredis à thème : dress code et concours." },
     { jour: "Samedi",   nom: "Big Party",        texte: "Les samedis événements : nos plus grosses soirées !" }
+  ],
+
+  // Questions fréquentes (à mettre à jour avec le planning)
+  faq: [
+    { q: "Quels soirs le KickOff Bar propose-t-il des soirées ?",
+      r: "Le KickOff Bar propose des soirées à thème du mardi au samedi : Social & Fun le mardi, Music Club le mercredi, Student Night le jeudi, Dress Code Party le vendredi et Big Party le samedi." },
+    { q: "Combien coûte le cocktail de la semaine ?",
+      r: "Le cocktail de la semaine est à 6 €. Il change chaque semaine." },
+    { q: "Y a-t-il des soirées étudiantes ?",
+      r: "Oui, chaque jeudi : c'est la Student Night, avec des animations et des défis entre campus." },
+    { q: "Quand ont lieu les soirées karaoké et blind test ?",
+      r: "Le mardi, pendant les soirées Social & Fun : Karaoké Battle les 1er décembre et 5 janvier, Blind Test Battle le 8 décembre, Christmas Karaoké le 22 décembre, Music Bingo & Blind Test le 12 janvier." },
+    { q: "Le bar est-il ouvert pendant les fêtes ?",
+      r: "Le KickOff Bar est fermé pour Noël les jeudi 24 et vendredi 25 décembre 2026. Il fête le Nouvel An le jeudi 31 décembre avec la New Year Mega Party." }
   ],
 
   /*
