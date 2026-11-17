@@ -8,18 +8,18 @@ window.KICKOFF = {
   site: { url: "https://nebuyr168.github.io/kickoff-bar" },
 
   infos: {
-    adresse: "48 rue Georges Clemenceau",
+    adresse: "105 rue Nationale",
     complement: "Passage du Cadran",
     codePostal: "49300",
     ville: "Cholet",
-    latitude: 47.06186,   // position du repère sur la carte
-    longitude: -0.87894,
-    horaires: "",       // texte affiché, ex. "18 h – 1 h"
-    heureOuverture: "", // pour Google, format 24 h, ex. "18:00"
-    heureFermeture: "", // pour Google, format 24 h, ex. "01:00"
+    latitude: 47.06231,   // position du repère sur la carte
+    longitude: -0.87877,
+    horaires: "17 h – 2 h",     // texte affiché, ex. "18 h – 1 h"
+    heureOuverture: "17:00", // pour Google, format 24 h, ex. "18:00"
+    heureFermeture: "02:00", // pour Google, format 24 h, ex. "01:00"
     telephone: "",      // ex. "02 00 00 00 00"
     email: "",          // ex. "contact@kickoffbar.fr"
-    instagram: "",      // adresse complète du profil, ex. "https://www.instagram.com/…"
+    instagram: "https://www.instagram.com/kickoffbar.cholet49/",    // adresse complète du profil, ex. "https://www.instagram.com/…"
     facebook: ""        // adresse complète de la page
   },
 
@@ -35,11 +35,13 @@ window.KICKOFF = {
   // Questions fréquentes (à mettre à jour avec le planning)
   faq: [
     { q: "Où se trouve le KickOff Bar ?",
-      r: "Le KickOff Bar se trouve au 48 rue Georges Clemenceau, passage du Cadran, à Cholet (49300)." },
+      r: "Le KickOff Bar se trouve au 105 rue Nationale, passage du Cadran, à Cholet (49300)." },
     { q: "Quels soirs le KickOff Bar propose-t-il des soirées ?",
       r: "Le KickOff Bar propose des soirées à thème du mardi au samedi : Social & Fun le mardi, Music Club le mercredi, Student Night le jeudi, Dress Code Party le vendredi et Big Party le samedi." },
-    { q: "Combien coûte le cocktail de la semaine ?",
-      r: "Le cocktail de la semaine est à 6 €. Il change chaque semaine." },
+    { q: "Quels sont les horaires du KickOff Bar ?",
+      r: "Le KickOff Bar est ouvert du mardi au samedi, de 17 h à 2 h." },
+    { q: "Quels sont les prix au KickOff Bar ?",
+      r: "Les trois produits phares sont le punch à 4 €, la pinte de blonde à 5 € et le cocktail de la semaine à 6 €. Ils sont proposés avec ou sans alcool." },
     { q: "Y a-t-il des soirées étudiantes ?",
       r: "Oui, chaque jeudi : c'est la Student Night, avec des animations et des défis entre campus." },
     { q: "Quand ont lieu les soirées karaoké et blind test ?",
