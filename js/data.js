@@ -18,7 +18,7 @@ window.KICKOFF = {
     heureOuverture: "17:00", // pour Google, format 24 h, ex. "18:00"
     heureFermeture: "02:00", // pour Google, format 24 h, ex. "01:00"
     telephone: "",      // ex. "02 00 00 00 00"
-    email: "",          // ex. "contact@kickoffbar.fr"
+    email: "kickoffbar.cholet49@outlook.com",   // ex. "contact@kickoffbar.fr"
     instagram: "https://www.instagram.com/kickoffbar.cholet49/",    // adresse complète du profil, ex. "https://www.instagram.com/…"
     facebook: ""        // adresse complète de la page
   },

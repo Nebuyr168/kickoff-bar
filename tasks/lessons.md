@@ -1,0 +1,1 @@
+[2026-11-17] | Adresse publiée (48 rue Georges Clemenceau) contredite par les affiches du bar (105 rue Nationale) | Dès que des supports officiels du client existent, y recouper adresse, horaires et contacts avant de publier.
